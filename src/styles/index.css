@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@Layer utilities{
+    .input-form{
+        @apply w-[100%] px-[20px] py-[9px] mb-[14px] focus:outline-none bg-[#F7F7F7] rounded-[6px] text-black placeholder:text-black placeholder:font-title;
+    }
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --defaultBlue: #0093ff;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer components {
+  .input-auth-form {
+    @apply w-[100%] px-[20px] py-[9px] mb-[14px] focus:outline-none bg-[#F7F7F7] rounded-[6px] text-black placeholder:text-black placeholder:font-title
+  }
+  .btn-auth-subm{
+    @apply bg-defaultBlue text-base text-white font-title mr-2.5 px-7 py-1.5 rounded-[6px]
+  }
+  .btn-login{
+    @apply font-title text-base pb-2.5 border-b-2 hover:border-defaultBlue
+  }
+  .btn-register{
+    @apply font-title pb-2.5 text-base border-b-2 hover:border-defaultBlue
+  }
+  .active{
+    @apply border-defaultBlue font-bold
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
