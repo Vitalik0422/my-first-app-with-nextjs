@@ -1,37 +1,35 @@
-import Link from "next/link"
-import {SubmitHandler, useForm} from "react-hook-form"
+import Link from 'next/link';
+import { useForm, SubmitHandler  } from 'react-hook-form';
+import { schemaValidationLogin } from './validationSchema';
+import { useJoiValidationResolver } from '@/common/hooks/useJoiValidationResolver';
 
-type RegInputs = {
-    name: string,
+type LoginInputs={
     email: string,
     password: string
 }
 
-export default function RegisterForm() {
+export default function LoginForm() {
+    const resolver = useJoiValidationResolver(schemaValidationLogin)
     const {
-            register, 
-            handleSubmit
-        } = useForm<RegInputs>()
+        register,
+        handleSubmit,
+        } = useForm<LoginInputs>({
+            resolver
+        })
     
-    const onSubmit: SubmitHandler<RegInputs> = async(data) =>{
-        console.log(data);  
+        const onSubmit: SubmitHandler<LoginInputs>  = async(data) => {
+        console.log(data);
     }
     return (
         <form action=""onSubmit={handleSubmit(onSubmit)}>
             <input
-                {...register('name')}
-                placeholder="Full Name"
-                type="text"
-                className="input-auth-form"
-            />
-            <input
-                {...register('email')}
+                {...register('email')}              
                 placeholder="E-mail Address"
                 type="text"
                 className="input-auth-form"
             />
             <input
-                {...register('password')}
+                {...register('password')}   
                 placeholder="Password"
                 type="text"
                 className="input-auth-form"

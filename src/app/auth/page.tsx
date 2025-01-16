@@ -1,5 +1,5 @@
 'use client'
-import AuthForm from "@/components/auth/AuthForm"
+import AuthStructure from "@/components/auth/AuthStructure"
 import Banner from "@/components/auth/Banner"
 
 export default function Auth() {
@@ -9,7 +9,7 @@ export default function Auth() {
                 <Banner></Banner>
             </div>
             <div className="w-[100%] h-dvh p-[60px]">
-            <AuthForm />
+            <AuthStructure />
             </div>
         </div>
     )
